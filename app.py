@@ -12,4 +12,10 @@ def serve_template_file():
     return render_template('index.html', files=files)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0",  port=80)
+
+
+# pyinstaller --name MyFlaskApp --onefile app.py
+# pyinstaller -w -F --add-data "templates;templates" --add-data "static;static" app.py
+
+# pyinstaller -w --add-data "templates;templates" --add-data "static;static" app.py
